@@ -1,0 +1,21 @@
+
+backend:
+  name: github
+  repo: AbuGhazie/ahmad-alarag
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "articles"
+    label: "المقالات"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "عنوان المقال", name: "title", widget: "string" }
+      - { label: "تاريخ النشر", name: "date", widget: "datetime" }
+      - { label: "صورة المقال", name: "image", widget: "image", required: false }
+      - { label: "نص المقال", name: "body", widget: "markdown" }
+      
