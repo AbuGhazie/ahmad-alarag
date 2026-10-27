@@ -2,6 +2,8 @@ backend:
   name: github
   repo: AbuGhazie/ahmad-alarag
   branch: main
+  base_url: https://decap-cms-oauth.netlify.app
+  auth_endpoint: /auth
 
 media_folder: "images"
 public_folder: "/images"
@@ -16,4 +18,3 @@ collections:
       - {label: "العنوان", name: "title", widget: "string"}
       - {label: "تاريخ النشر", name: "date", widget: "datetime"}
       - {label: "المحتوى", name: "body", widget: "markdown"}
-      
