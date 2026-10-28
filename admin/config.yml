@@ -1,0 +1,37 @@
+
+backend:
+  name: turbo-github
+  turbo_site_id: 42bc6cc2-08bf-44de-b1a9-6cf8747f9392
+  branch: main
+
+locale: ar
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site_data"
+    label: "محتوى الموقع"
+    files:
+      - name: "articles"
+        label: "المقالات والكتابات"
+        file: "data/articles.json"
+        fields:
+          - label: "المقالات"
+            name: "articles"
+            widget: "list"
+            fields:
+              - label: "عنوان المقال"
+                name: "title"
+                widget: "string"
+              - label: "نبذة عن المقال"
+                name: "summary"
+                widget: "text"
+              - label: "رابط المقال"
+                name: "url"
+                widget: "string"
+              - label: "صورة المقال"
+                name: "image"
+                widget: "image"
+                required: false
+                
