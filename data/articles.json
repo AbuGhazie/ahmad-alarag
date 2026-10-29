@@ -1,3 +1,9 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "title": "مقال تجريبي – اختبار لوحة الإدارة",
+      "summary": "هذا مقال تجريبي للتأكد من عمل نظام إدارة المحتوى.",
+      "url": "https://example.com/test-article"
+    }
+  ]
 }
