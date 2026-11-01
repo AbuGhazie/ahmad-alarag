@@ -334,7 +334,7 @@
 
         const tag = document.createElement("div");
         tag.className = "tag";
-        tag.textContent = item.tag;
+        tag.textContent = entry.category || item.tag;
         card.appendChild(tag);
 
         const title = document.createElement("h3");
