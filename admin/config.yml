@@ -22,6 +22,7 @@ collections:
             fields:
               - { label: "عنوان المقال", name: "title", widget: "string" }
               - { label: "نبذة عن المقال", name: "summary", widget: "text" }
+              - { label: "نص المقال كاملًا", name: "content", widget: "markdown", required: false }
               - { label: "رابط المقال", name: "url", widget: "string" }
               - { label: "صورة المقال", name: "image", widget: "image", required: false }
 
