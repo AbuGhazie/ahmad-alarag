@@ -327,7 +327,7 @@
           card.appendChild(description);
         }
 
-        if (entry.url) {
+        if (entry.url && !(item.id === "media" && entry.url.trim() === "https://ahmad-alarag.netlify.app/")) {
           const link = document.createElement("a");
           link.href = entry.url;
           link.target = "_blank";
