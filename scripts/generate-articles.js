@@ -67,101 +67,179 @@ for (const article of articles) {
   const date = escapeHtml(article.date || "");
   const articleUrl = `${SITE_URL}/articles/${slug}`;
 
+    const articleDate = escapeHtml(article.date || "");
+  const category = escapeHtml(article.category || "مقال سياسي");
+  const author = "✍🏻 أحمد حسن الأعرج";
+  const shareText = encodeURIComponent(article.title + "\n" + articleUrl);
+
   const html = `${GENERATED_MARKER}
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173d32">
 <title>${title} | أحمد حسن الأعرج</title>
 <meta name="description" content="${description}">
 <link rel="canonical" href="${articleUrl}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
+<meta property="og:locale" content="ar_AR">
 <meta property="og:url" content="${articleUrl}">
 <meta property="og:image" content="${escapeHtml(image)}">
+<meta property="og:image:alt" content="أحمد حسن الأعرج، كاتب وإعلامي فلسطيني">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${description}">
 <meta name="twitter:image" content="${escapeHtml(image)}">
 <style>
+:root {
+  --green: #173d32;
+  --red: #a83232;
+  --gold: #c5a45c;
+  --text: #292929;
+  --muted: #777;
+  --paper: #fff;
+  --background: #f4f3ef;
+}
+* { box-sizing: border-box; }
 body {
   margin: 0;
-  background: #f4f5f2;
-  color: #26332d;
+  background: var(--background);
+  color: var(--text);
   font-family: Tahoma, Arial, sans-serif;
-  line-height: 2;
+  line-height: 2.05;
+}
+.top-line {
+  height: 6px;
+  background: linear-gradient(to left,
+    var(--green) 0 60%,
+    var(--red) 60% 82%,
+    var(--gold) 82% 100%);
 }
 header {
-  background: #173d32;
+  background: var(--green);
   color: white;
-  padding: 24px;
+  padding: 25px 18px;
   text-align: center;
+}
+.site-name {
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+.site-description {
+  color: #e4e9e5;
+  font-size: 13px;
+  margin: 0;
 }
 main {
-  max-width: 850px;
+  width: min(900px, calc(100% - 28px));
   margin: 35px auto;
-  padding: 30px;
-  background: white;
+}
+.article {
+  background: var(--paper);
+  padding: 42px 48px;
   border-radius: 12px;
+  border-top: 5px solid var(--gold);
+  box-shadow: 0 5px 25px rgba(0,0,0,.06);
 }
-.category { color: #a83232; }
-.article-date {
-  color: #777;
-  font-size: 14px;
-  margin-top: -8px;
+.category {
+  display: inline-block;
+  color: var(--red);
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
-h1 { color: #173d32; line-height: 1.6; }
-.article-content { font-size: 18px; }
-footer {
-  text-align: center;
-  padding: 25px;
-  color: #666;
+h1 {
+  color: var(--green);
+  font-size: 29px;
+  line-height: 1.7;
+  margin: 0 0 20px;
 }
-a { color: #a83232; }
-.share-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 25px;
-}
-
-.whatsapp-share {
-  background: #25D366;
-  color: white !important;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
+.author {
+  border-right: 3px solid var(--gold);
+  padding-right: 13px;
+  margin: 20px 0 28px;
+  color: var(--green);
   font-weight: bold;
 }
+.author span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: normal;
+}
+.article-body p {
+  margin: 0 0 23px;
+  font-size: 17px;
+  text-align: justify;
+}
+.article-footer {
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.article-footer a {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.back-link {
+  background: var(--green);
+  color: white;
+}
+.share-link {
+  background: #25D366;
+  color: white;
+}
+footer {
+  text-align: center;
+  padding: 24px 15px;
+  color: #e7e7e7;
+  background: var(--green);
+  font-size: 13px;
+}
 @media (max-width: 600px) {
-  main { margin: 15px; padding: 20px; }
+  main { width: calc(100% - 20px); margin: 18px auto; }
+  .article { padding: 25px 19px; }
+  h1 { font-size: 23px; }
+  .article-body p { font-size: 16px; text-align: right; }
+  .site-name { font-size: 17px; }
 }
 </style>
 </head>
 <body>
+<div class="top-line"></div>
 <header>
-  <h2>أحمد حسن الأعرج | كاتب وإعلامي فلسطيني</h2>
+  <p class="site-name">أحمد حسن الأعرج</p>
+  <p class="site-description">كاتب وإعلامي فلسطيني | الموقع الرسمي</p>
 </header>
 <main>
-  <div class="category">${escapeHtml(article.category || "مقال")}</div>
+<article class="article">
+  <div class="category">${category}</div>
   <h1>${title}</h1>
-  ${date ? `<p class="article-date">${date}</p>` : ""}
-  <p>✍🏻 أحمد حسن الأعرج</p>
-  <hr>
-  <div class="article-content">${content}</div>
-  <div class="share-buttons">
-  <a class="whatsapp-share"
-     href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' - ' + articleUrl)}"
-     target="_blank"
-     rel="noopener">
-     مشاركة عبر واتساب
-  </a>
-  <a href="../index.html#articles">العودة إلى المقالات</a>
-</div>
+  <div class="author">
+    ${author}
+    <span>كاتب وإعلامي${articleDate ? " | " + articleDate : ""}</span>
+  </div>
+  <div class="article-body">
+    ${content}
+  </div>
+  <div class="article-footer">
+    <a class="back-link" href="../index.html#articles">العودة إلى المقالات</a>
+    <a class="share-link" href="https://wa.me/?text=${shareText}" target="_blank" rel="noopener">مشاركة عبر واتساب</a>
+  </div>
+</article>
 </main>
-<footer>© أحمد حسن الأعرج</footer>
+<footer>© أحمد حسن الأعرج — كاتب وإعلامي فلسطيني</footer>
 </body>
 </html>`;
 
