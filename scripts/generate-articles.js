@@ -120,6 +120,21 @@ footer {
   color: #666;
 }
 a { color: #a83232; }
+.share-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.whatsapp-share {
+  background: #25D366;
+  color: white !important;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
 @media (max-width: 600px) {
   main { margin: 15px; padding: 20px; }
 }
@@ -136,7 +151,15 @@ a { color: #a83232; }
   <p>✍🏻 أحمد حسن الأعرج</p>
   <hr>
   <div class="article-content">${content}</div>
-  <p><a href="../index.html#articles">العودة إلى المقالات</a></p>
+  <div class="share-buttons">
+  <a class="whatsapp-share"
+     href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' - ' + articleUrl)}"
+     target="_blank"
+     rel="noopener">
+     مشاركة عبر واتساب
+  </a>
+  <a href="../index.html#articles">العودة إلى المقالات</a>
+</div>
 </main>
 <footer>© أحمد حسن الأعرج</footer>
 </body>
