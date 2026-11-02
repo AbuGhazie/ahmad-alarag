@@ -21,6 +21,8 @@ collections:
             widget: "list"
             fields:
               - { label: "عنوان المقال", name: "title", widget: "string" }
+              - { label: "تصنيف المقال", name: "category", widget: "string", required: false }
+              - { label: "تاريخ النشر", name: "date", widget: "string", required: false }
               - { label: "نبذة عن المقال", name: "summary", widget: "text" }
               - { label: "نص المقال كاملًا", name: "content", widget: "markdown", required: false }
               - { label: "رابط المقال", name: "url", widget: "string" }
