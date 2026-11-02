@@ -64,6 +64,7 @@ for (const article of articles) {
   }
 
   const content = markdownToHtml(article.content);
+  const date = escapeHtml(article.date || "");
   const articleUrl = `${SITE_URL}/articles/${slug}`;
 
   const html = `${GENERATED_MARKER}
@@ -106,6 +107,11 @@ main {
   border-radius: 12px;
 }
 .category { color: #a83232; }
+.article-date {
+  color: #777;
+  font-size: 14px;
+  margin-top: -8px;
+}
 h1 { color: #173d32; line-height: 1.6; }
 .article-content { font-size: 18px; }
 footer {
@@ -126,6 +132,7 @@ a { color: #a83232; }
 <main>
   <div class="category">${escapeHtml(article.category || "مقال")}</div>
   <h1>${title}</h1>
+  ${date ? `<p class="article-date">${date}</p>` : ""}
   <p>✍🏻 أحمد حسن الأعرج</p>
   <hr>
   <div class="article-content">${content}</div>
