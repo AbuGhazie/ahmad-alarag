@@ -66,6 +66,252 @@
     .footer-inner{max-width:1120px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
     .footer-inner p{margin:0}
     @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}.portrait{min-height:210px}.about-grid,.cards{grid-template-columns:1fr}nav{gap:12px}.brand{width:100%}section{padding:40px 0}h2{font-size:25px}}
+ 
+/* ===== Modern Editorial Redesign ===== */
+
+:root {
+  --green: #12382e;
+  --green2: #245847;
+  --red: #9d3b3b;
+  --gold: #c5a66a;
+  --paper: #faf9f5;
+  --ink: #202b26;
+  --muted: #68766f;
+  --line: #e7e5dc;
+}
+
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background: var(--paper);
+  line-height: 2;
+}
+
+.topline {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #173d32 0 45%,
+    #fff 45% 55%,
+    #a33b3b 55% 100%
+  );
+}
+
+header {
+  background:
+    radial-gradient(ellipse at 15% 20%, #315b49 0%, transparent 48%),
+    linear-gradient(135deg, #102e26, #173d32 65%, #102b24);
+}
+
+.nav {
+  max-width: 1180px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+}
+
+.brand {
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+nav {
+  gap: 22px;
+}
+
+nav a {
+  font-size: 14px;
+  transition: color .2s ease;
+}
+
+nav a:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.hero {
+  max-width: 1180px;
+  min-height: 510px;
+  padding-top: 75px;
+  padding-bottom: 85px;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 65px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--gold);
+  border-right: 3px solid var(--gold);
+  padding-right: 12px;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 800;
+  letter-spacing: -.8px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: #e0e9e3;
+  font-size: 17px;
+  line-height: 2.1;
+}
+
+.portrait {
+  min-height: 350px;
+  border: 5px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  box-shadow: 0 20px 55px rgba(0,0,0,.25);
+  background: rgba(255,255,255,.05);
+}
+
+.portrait img {
+  border-radius: 15px;
+  object-position: center 25%;
+}
+
+.btn {
+  padding: 12px 23px;
+  border-radius: 6px;
+  transition: .2s ease;
+}
+
+.btn.primary {
+  background: var(--gold);
+  color: #18372c;
+  border-color: var(--gold);
+}
+
+.btn.secondary {
+  border-color: rgba(255,255,255,.55);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+main {
+  max-width: 1180px;
+}
+
+section {
+  padding: 65px 0;
+}
+
+.section-head {
+  margin-bottom: 30px;
+}
+
+.section-head .kicker {
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.lead {
+  line-height: 2.1;
+}
+
+.card {
+  border: 1px solid #e9e7df;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 22px rgba(22,50,38,.035);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(22,50,38,.09);
+}
+
+.card h3 {
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.quote {
+  background: #f0eee5;
+  border-right: 4px solid var(--gold);
+  border-radius: 5px;
+  line-height: 2.1;
+}
+
+.book-cover {
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.links a {
+  border-radius: 6px;
+  transition: .2s ease;
+}
+
+.links a:hover {
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+}
+
+footer {
+  background: #102b24;
+  border-top: 3px solid var(--gold);
+}
+
+@media(max-width:760px) {
+  .nav {
+    padding: 17px 18px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  nav {
+    gap: 10px 16px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 48px 20px 55px;
+    gap: 30px;
+  }
+
+  h1 {
+    font-size: 39px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .portrait {
+    min-height: 250px;
+    max-width: 340px;
+    margin: auto;
+    width: 100%;
+  }
+
+  section {
+    padding: 45px 0;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .card {
+    padding: 21px;
+  }
+}
+
   </style>
   <script type="application/ld+json">
   {
