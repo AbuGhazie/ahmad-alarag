@@ -1,0 +1,253 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d32">
+  <meta name="description" content="الظهور الإعلامي والمقابلات التلفزيونية والمواد المصوّرة لأحمد حسن الأعرج، كاتب وإعلامي فلسطيني.">
+  <title>الظهور الإعلامي | أحمد حسن الأعرج</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f7f4;
+      color: #26352f;
+      line-height: 1.9;
+    }
+
+    header {
+      background: #173d32;
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+    }
+
+    header h1 { margin: 0; font-size: 27px; }
+
+    header p {
+      margin: 5px 0 0;
+      color: #e4d4a4;
+    }
+
+    nav { margin-top: 12px; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid #ffffff55;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 0 16px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .intro h2 {
+      color: #173d32;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .intro p { color: #65736c; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e4e9e4;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 5px 18px #173d3210;
+      overflow: hidden;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      color: #a98a43;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .card h3 {
+      color: #173d32;
+      font-size: 19px;
+      margin: 5px 0 10px;
+    }
+
+    .card p {
+      color: #647168;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 8px;
+      background: #173d32;
+      color: white;
+      text-decoration: none;
+      padding: 7px 14px;
+      border-radius: 7px;
+      font-size: 14px;
+    }
+
+    .empty {
+      text-align: center;
+      color: #65736c;
+      padding: 25px;
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      margin-top: 45px;
+      padding: 20px;
+      background: #173d32;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>أحمد حسن الأعرج</h1>
+  <p>كاتب وإعلامي فلسطيني</p>
+  <nav>
+    <a href="index.html">العودة إلى الموقع الرئيسي</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>الظهور الإعلامي</h2>
+    <p>مقابلات تلفزيونية، لقاءات، بودكاست، ومشاركات إعلامية توثّق المواقف والقضايا الفلسطينية.</p>
+  </section>
+
+  <section class="cards" id="media">
+    <div class="empty">جارٍ تحميل الأعمال الإعلامية...</div>
+  </section>
+</main>
+
+<footer>
+  ✍🏻 أحمد حسن الأعرج — كاتب وإعلامي فلسطيني
+</footer>
+
+<script>
+(async function () {
+  const container = document.getElementById("media");
+
+  const staticItems = [
+    {
+      title: "حركة «فتح» في قلب المعركة الوطنية",
+      category: "فلسطيننا · برنامج نبض الفتح",
+      summary: "مقابلة تلفزيونية عبر قناة فلسطيننا الفضائية.",
+      url: "https://youtu.be/ObgwUQQSH_s"
+    },
+    {
+      title: "الموقف الفلسطيني من القضايا الوطنية",
+      category: "فلسطيننا · برنامج القرار",
+      summary: "مقابلة إعلامية عبر قناة فلسطيننا الفضائية.",
+      url: "https://youtu.be/r3kjzkLUg0Y"
+    },
+    {
+      title: "العهد باقٍ للشرعية الوطنية الفلسطينية",
+      category: "مادة مصوّرة",
+      url: "https://www.facebook.com/share/v/1CQLu25TE5/"
+    },
+    {
+      title: "مقتطف من عرافة المؤتمر التنظيمي السابع",
+      category: "عمل إعلامي وتنظيمي",
+      url: "https://www.facebook.com/share/v/19gSoCyv1E/"
+    }
+  ];
+
+  function addCard(entry, category) {
+    if (!entry.title) return;
+
+    const card = document.createElement("article");
+    card.className = "card";
+
+    if (entry.image) {
+      const img = document.createElement("img");
+      img.src = entry.image;
+      img.alt = entry.title;
+      img.loading = "lazy";
+      card.appendChild(img);
+    }
+
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.textContent = entry.category || category;
+    card.appendChild(tag);
+
+    const title = document.createElement("h3");
+    title.textContent = entry.title;
+    card.appendChild(title);
+
+    if (entry.summary) {
+      const p = document.createElement("p");
+      p.textContent = entry.summary;
+      card.appendChild(p);
+    }
+
+    if (entry.url && entry.url.trim() !== "https://ahmad-alarag.netlify.app/") {
+      const link = document.createElement("a");
+      link.href = entry.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "مشاهدة المادة";
+      card.appendChild(link);
+    }
+
+    container.appendChild(card);
+  }
+
+  try {
+    const response = await fetch("data/media.json");
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data.media)) {
+        data.media.forEach(entry => addCard(entry, "عمل إعلامي"));
+      }
+    }
+  } catch (error) {
+    console.warn("تعذر تحميل ملف الأعمال الإعلامية.");
+  }
+
+  staticItems.forEach(entry => addCard(entry, "عمل إعلامي"));
+
+  if (!container.querySelector(".card")) {
+    container.innerHTML = '<div class="empty">لا توجد مواد إعلامية لعرضها حالياً.</div>';
+  }
+})();
+</script>
+
+</body>
+</html>
