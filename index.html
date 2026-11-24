@@ -311,7 +311,21 @@ footer {
     padding: 21px;
   }
 }
+/* عرض مختارات محدودة في الصفحة الرئيسية */
+#books .books-preview .card:nth-child(n+3),
+#media .media-preview .card:nth-child(n+4),
+#certificates .certificates-preview .card:nth-child(n+3) {
+  display: none;
+}
 
+/* تحسين العرض على الهاتف */
+@media (max-width: 760px) {
+  #books .books-preview,
+  #media .media-preview,
+  #certificates .certificates-preview {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
   <script type="application/ld+json">
   {
@@ -376,7 +390,7 @@ footer {
     <p class="lead">شهادات ودورات متخصصة تعكس مسار التطور الأكاديمي والمهني في مجالات الصحافة والإعلام والاتصال.</p>
   </div>
 
-  <div class="cards">
+  <div class="cards certificates-preview">
     <article class="card">
       <div class="tag">دورة متخصصة · 15 أكتوبر 2026</div>
       <h3>صحافة الإنترنت</h3>
@@ -398,6 +412,9 @@ footer {
       <img src="https://raw.githubusercontent.com/AbuGhazie/ahmad-alarag/cv-certificates/20150828_104708-1.jpg" alt="شهادة الصفائح المعدنية من مركز سبلين للتدريب المهني والتقني" style="width:100%; border-radius:12px; margin-top:14px;">
     </article>
   </div>
+      <div class="actions" style="margin-top:18px">
+  <a class="btn primary" href="certificates.html">عرض جميع الشهادات</a>
+      </div>
 </section>
     <section id="articles">
       <div class="section-head">
@@ -405,7 +422,17 @@ footer {
         <h2>مقالات أحمد حسن الأعرج</h2>
         <p class="lead"> منصة توثّق نتاجي الفكري والإعلامي، وتضم مجموعة من المقالات والقراءات السياسية والوطنية المنشورة في منصات إعلامية متعددة، وتتناول القضية الفلسطينية، والهوية والذاكرة الوطنية، والقرار المستقل، وقضايا اللاجئين. يتيح هذا الأرشيف الوصول إلى المقالات الأصلية ومتابعة أبرز كتاباتي.</p>
       </div>
-      <div class="cards cms-cards"></div>
+      <style>
+  #articles .cms-cards .card:nth-child(n+4) {
+    display: none;
+  }
+</style>
+
+<div class="cards cms-cards"></div>
+
+<div class="actions" style="margin-top:18px">
+  <a class="btn primary" href="articles.html">عرض جميع المقالات</a>
+</div>
       <div class="note" style="margin-top:18px">هذا أرشيف أولي يضم الروابط المباشرة التي أمكن التحقق منها. يمكن البحث عن مقالات أخرى عبر مركز النهوض باستخدام الزر أدناه، ثم توسيع الأرشيف بروابطها الدقيقة.</div>
       <div class="actions" style="margin-top:18px">
         <a class="btn primary" style="background:var(--green);color:#fff;border-color:var(--green)" href="https://alnuhud.com/?s=%D8%A3%D8%AD%D9%85%D8%AF+%D8%AD%D8%B3%D9%86+%D8%A7%D9%84%D8%A3%D8%B9%D8%B1%D8%AC" target="_blank" rel="noopener">البحث عن مقالات أخرى في مركز النهوض</a>
@@ -417,7 +444,7 @@ footer {
         <h2>الكتب</h2>
         <p class="lead">يمكنك الاطلاع على صفحة كل كتاب في مكتبة نور، أو فتح نسخته الإلكترونية بصيغة PDF عبر Google Drive.</p>
       </div>
-      <div class="cards">
+      <div class="cards books-preview">
         <article class="card">
           <div class="tag">كتاب منشور</div>
           <a class="book-cover-link" href="https://noor-book.com/c9ozhui" target="_blank" rel="noopener" aria-label="فتح كتاب بناء الإنسان على مكتبة نور">
@@ -450,6 +477,9 @@ footer {
           <p>مساحة للتعريف بالمشاريع الفكرية والكتابية عند جاهزيتها للنشر.</p>
         </article>
       </div>
+          <div class="actions" style="margin-top:18px">
+  <a class="btn primary" href="books.html">عرض جميع الكتب</a>
+          </div>
     </section>
 
     <section id="media">
@@ -458,7 +488,7 @@ footer {
         <h2>الظهور الإعلامي</h2>
         <p class="lead">مقابلات ومواد مرئية منشورة، مع روابطها الأصلية للمتابعة والمشاهدة.</p>
       </div>
-      <div class="cards">
+      <div class="cards media-preview">
         <article class="card">
           <div class="tag">مقابلة تلفزيونية · قناة فلسطيننا الفضائية</div>
           <h3>حركة «فتح» في قلب المعركة… الرائدة بحماية المشروع الوطني الفلسطيني</h3>
@@ -485,6 +515,9 @@ footer {
 </article>
         
       </div>
+          <div class="actions" style="margin-top:18px">
+  <a class="btn primary" href="media.html">عرض جميع الأعمال الإعلامية</a>
+          </div>
     </section>
 
     <section id="contact">
