@@ -1,0 +1,356 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12382e">
+  <meta name="description" content="أرشيف مقالات أحمد حسن الأعرج، كاتب وإعلامي فلسطيني. مقالات سياسية ووطنية وفكرية في الشأن الفلسطيني.">
+  <title>أرشيف المقالات | أحمد حسن الأعرج</title>
+
+  <style>
+    :root {
+      --green:#12382e;
+      --green2:#245847;
+      --red:#9d3b3b;
+      --gold:#c5a66a;
+      --paper:#faf9f5;
+      --ink:#202b26;
+      --muted:#68766f;
+      --line:#e7e5dc;
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:Tahoma,Arial,sans-serif;
+      line-height:2;
+    }
+
+    a {
+      color:var(--green2);
+      text-decoration:none;
+    }
+
+    .topline {
+      height:5px;
+      background:linear-gradient(90deg,var(--green) 0 45%,#fff 45% 55%,var(--red) 55% 100%);
+    }
+
+    header {
+      background:linear-gradient(135deg,#102e26,var(--green));
+      color:#fff;
+    }
+
+    .nav {
+      max-width:1120px;
+      margin:auto;
+      padding:20px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:15px;
+      border-bottom:1px solid rgba(255,255,255,.15);
+    }
+
+    .brand {
+      font-size:19px;
+      font-weight:bold;
+    }
+
+    .nav a {
+      color:#fff;
+      font-size:14px;
+    }
+
+    .hero {
+      max-width:1120px;
+      margin:auto;
+      padding:55px 22px 65px;
+    }
+
+    .eyebrow {
+      color:var(--gold);
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    h1 {
+      font-size:clamp(30px,5vw,46px);
+      margin:10px 0;
+      line-height:1.5;
+    }
+
+    .hero p {
+      color:#e0e9e3;
+      max-width:760px;
+      margin:0;
+    }
+
+    main {
+      max-width:1120px;
+      margin:auto;
+      padding:35px 22px 65px;
+    }
+
+    .intro {
+      margin-bottom:25px;
+    }
+
+    .intro h2 {
+      color:var(--green);
+      font-size:26px;
+      margin:0 0 8px;
+    }
+
+    .intro p {
+      color:var(--muted);
+      margin:0;
+    }
+
+    .search {
+      width:100%;
+      padding:15px 17px;
+      border:1px solid var(--line);
+      border-radius:9px;
+      font-family:inherit;
+      font-size:15px;
+      background:#fff;
+      margin:20px 0 25px;
+      outline-color:var(--green2);
+    }
+
+    .count {
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card {
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:23px;
+      box-shadow:0 5px 22px rgba(22,50,38,.035);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .tag {
+      color:var(--red);
+      font-size:12px;
+      font-weight:bold;
+    }
+
+    .card h3 {
+      color:var(--green);
+      font-size:19px;
+      line-height:1.8;
+      margin:8px 0;
+    }
+
+    .card p {
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 18px;
+      line-height:2;
+      white-space:pre-line;
+    }
+
+    .read {
+      display:inline-block;
+      margin-top:auto;
+      align-self:flex-start;
+      background:var(--green);
+      color:#fff;
+      padding:9px 18px;
+      border-radius:7px;
+      font-size:13px;
+      font-weight:bold;
+    }
+
+    .read:hover {
+      background:var(--green2);
+      text-decoration:none;
+    }
+
+    .empty {
+      background:#fff;
+      border:1px dashed var(--line);
+      padding:25px;
+      border-radius:10px;
+      color:var(--muted);
+      text-align:center;
+      grid-column:1/-1;
+    }
+
+    footer {
+      background:#102b24;
+      color:#e8eee9;
+      padding:25px 22px;
+      text-align:center;
+      font-size:13px;
+    }
+
+    @media(max-width:700px) {
+      .cards { grid-template-columns:1fr; }
+      .hero { padding:40px 20px 48px; }
+      main { padding:30px 18px 50px; }
+      .card { padding:20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topline"></div>
+
+  <header>
+    <div class="nav">
+      <div class="brand">أحمد حسن الأعرج</div>
+      <a href="index.html">العودة إلى الصفحة الرئيسية ←</a>
+    </div>
+
+    <div class="hero">
+      <div class="eyebrow">الكتابة والرأي</div>
+      <h1>أرشيف المقالات</h1>
+      <p>
+        مساحة تجمع المقالات والقراءات السياسية والوطنية والفكرية
+        المنشورة، وتوثّق الكتابات المتعلقة بالقضية الفلسطينية
+        والهوية والذاكرة والقرار الوطني المستقل.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h2>مقالات أحمد حسن الأعرج</h2>
+      <p>تصفّح المقالات وابحث عن العناوين والموضوعات التي تهمك.</p>
+    </div>
+
+    <input
+      class="search"
+      id="search"
+      type="search"
+      placeholder="ابحث في عناوين المقالات وملخصاتها..."
+      aria-label="البحث في المقالات"
+    >
+
+    <div class="count" id="count">جارٍ تحميل المقالات...</div>
+
+    <div class="cards" id="articles">
+      <div class="empty">جارٍ تحميل الأرشيف...</div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 أحمد حسن الأعرج — كاتب وإعلامي فلسطيني
+  </footer>
+
+  <script>
+    const container = document.getElementById("articles");
+    const search = document.getElementById("search");
+    const count = document.getElementById("count");
+
+    let allArticles = [];
+
+    function renderArticles() {
+      const term = search.value.trim().toLowerCase();
+
+      const filtered = allArticles.filter(article => {
+        const title = article.title || "";
+        const summary = article.summary || "";
+        const category = article.category || "";
+
+        return (title + " " + summary + " " + category)
+          .toLowerCase()
+          .includes(term);
+      });
+
+      container.innerHTML = "";
+      count.textContent = "عدد المقالات: " + filtered.length;
+
+      if (!filtered.length) {
+        container.innerHTML =
+          '<div class="empty">لا توجد مقالات مطابقة لعملية البحث.</div>';
+        return;
+      }
+
+      filtered.forEach(article => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const tag = document.createElement("div");
+        tag.className = "tag";
+        tag.textContent = article.category || "مقال";
+
+        const title = document.createElement("h3");
+        title.textContent = article.title || "مقال بدون عنوان";
+
+        const summary = document.createElement("p");
+        summary.textContent = article.summary || "";
+
+        card.appendChild(tag);
+        card.appendChild(title);
+
+        if (summary.textContent) {
+          card.appendChild(summary);
+        }
+
+        if (article.url) {
+          const link = document.createElement("a");
+          link.className = "read";
+          link.href = article.url;
+          link.textContent = "اقرأ المقال";
+
+          if (/^https?:\/\//i.test(article.url)) {
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+          }
+
+          card.appendChild(link);
+        }
+
+        container.appendChild(card);
+      });
+    }
+
+    async function loadArticles() {
+      try {
+        const response = await fetch("data/articles.json");
+
+        if (!response.ok) {
+          throw new Error("تعذر تحميل ملف المقالات");
+        }
+
+        const data = await response.json();
+
+        allArticles = Array.isArray(data.articles)
+          ? data.articles.filter(article => article && article.title)
+          : [];
+
+        renderArticles();
+
+      } catch (error) {
+        count.textContent = "تعذر تحميل الأرشيف";
+
+        container.innerHTML =
+          '<div class="empty">حدث خطأ أثناء تحميل المقالات. يرجى المحاولة لاحقاً.</div>';
+      }
+    }
+
+    search.addEventListener("input", renderArticles);
+
+    loadArticles();
+  </script>
+</body>
+</html>
